@@ -9,7 +9,7 @@ public enum UserRole {
     BASE_USER("Пользователь"),
     PREMIUM_USER("Премиум пользователь"),
     ADMIN("Администратор"),
-    SUPERADMIN("Супер администратор");
+    SUPERADMIN("Главный администратор");
 
     UserRole(String roleType) {
         this.roleType = roleType;

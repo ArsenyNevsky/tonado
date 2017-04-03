@@ -1,0 +1,26 @@
+server:
+  servlet-path: /tonado/
+  port: 8080
+spring:
+  freemarker:
+    settings:
+     auto_include: layout/application.ftl
+
+---
+spring:
+  profiles:
+    - dev
+  datasource:
+      url: jdbc:h2:mem:hibernateTestDB
+      username: sa
+      password:
+      platform: h2
+      schema: classpath:/sql/dev/schema-h2.sql
+      data: classpath:/sql/dev/data-h2.sql
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  h2:
+    console:
+        enabled: true

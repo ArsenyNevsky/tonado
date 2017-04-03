@@ -8,6 +8,7 @@ import javax.persistence.Column;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.MappedSuperclass;
+import java.util.Date;
 
 @Getter
 @Setter
@@ -19,6 +20,8 @@ public abstract class AbstractUser extends BaseEntity {
 
     @Column(nullable = false)
     protected String firstname;
+
+    protected String middleName;
 
     @Column(nullable = false)
     protected String lastname;
@@ -33,6 +36,8 @@ public abstract class AbstractUser extends BaseEntity {
 
     @Enumerated(EnumType.STRING)
     protected UserRole role;
+
+    protected Date lastVisit;
 
     public void setRole(String role) {
         this.role = UserRole.valueOf(role);
